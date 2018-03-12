@@ -3,16 +3,33 @@
   <head>
     <title>Wat de WIV?</title>
     <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rivets/0.9.6/rivets.bundled.min.js"></script>
   </head>
   <body>
     <h1>Wat de WIV?</h1>
+
     <div class="quiz-container">
-      <div id="quiz"></div>
+      <div class="question" rv-each-question="questions" style="display: none;" rv-data-question="index" rv-show="question.active">
+        <div class="question" rv-text="question.question"></div>
+        <div class="answers">
+          <label rv-each-answer="question.answers">
+            <input type="checkbox" rv-data-accepted="answer.accepted" rv-checked="answer.chosen">
+            <span rv-text="answer.description"></span>
+          </label>
+        </div>
+<br/>
+        <button id="previous" rv-enabled="index | > 0" rv-on-click="prev">Vorige vraag</button>
+        <button id="next" rv-enabled="index | beforeLast questions" rv-on-click="next">Volgende vraag</button>
+        <button id="submit" rv-data-enabled="index | atLast questions" rv-on-click="check">Verstuur</button>
+      </div>
+
+      <div class="result" rv-if="result">
+        <span rv-text="result"></span>
+      </div>
+
     </div>
-    <button id="previous">Vorige vraag</button>
-    <button id="next">Volgende vraag</button>
-    <button id="submit">Verstuur</button>
-    <div id="results"></div>
+
     <script type="text/javascript" src="quiz.js"></script>
   </body>
 </html>

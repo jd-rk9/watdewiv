@@ -1,37 +1,37 @@
-## Welcome to GitHub Pages
+Hi web designer, we need you to make this tool populair. You can use this freely.
 
-You can use the [editor on GitHub](https://github.com/sicarii-13/watdewiv/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+**Yes this piece of software is MIT-licensed**
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Help us stop the sleepwet. You can clone or download this software and add this to yourwebsite.
 
-### Markdown
+Please add the following code in the body. 
+===============================================
+    <div class="quiz-container">
+      <div class="question" rv-each-question="questions" style="display: none;" rv-data-question="index" rv-show="question.active">
+        <div class="question" rv-text="question.question"></div>
+        <div class="answers">
+          <label rv-each-answer="question.answers">
+            <input type="checkbox" rv-data-accepted="answer.accepted" rv-checked="answer.chosen">
+            <span rv-text="answer.description"></span>
+          </label>
+        </div>
+<br/>
+        <button id="previous" rv-enabled="index | > 0" rv-on-click="prev">Vorige vraag</button>
+        <button id="next" rv-enabled="index | beforeLast questions" rv-on-click="next">Volgende vraag</button>
+        <button id="submit" rv-data-enabled="index | atLast questions" rv-on-click="check">Verstuur</button>
+      </div>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+      <div class="result" rv-if="result">
+        <span rv-text="result"></span>
+      </div>
 
-```markdown
-Syntax highlighted code block
+    </div>
 
-# Header 1
-## Header 2
-### Header 3
+    <script type="text/javascript" src="quiz.js"></script>
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+=============================
 
-**Bold** and _Italic_ and `Code` text
+And style the CSS or use the following iframe.
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sicarii-13/watdewiv/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+<iframe> #githubpages </iframe>
