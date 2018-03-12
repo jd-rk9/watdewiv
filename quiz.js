@@ -69,6 +69,11 @@ const rivetsData = {
 window.rivetsData = rivetsData;
 
 rivets.formatters['=='] = (valueA, valueB) => valueA == valueB;
+rivets.formatters['<'] = (valueA, valueB) => valueA < valueB;
+
+rivets.formatters['smallerThan'] = (valueA, valueB) => {
+  return valueA < valueB.length - 1;
+};
 
 $(document).ready(() => {
   rivets.bind($('.quiz-container'), rivetsData);
