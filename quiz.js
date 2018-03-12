@@ -1,28 +1,28 @@
 /*MIT License
 
-Copyright (c) 2018 Joeri Jungschlager
+ Copyright (c) 2018 Joeri Jungschlager
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
- * 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+ *
  *  */
 
-(function() {
+(function () {
   function buildQuiz() {
     // we'll need a place to store the HTML output
     const output = [];
@@ -91,43 +91,43 @@ SOFTWARE.
   const resultsContainer = document.getElementById("results");
   const submitButton = document.getElementById("submit");
   const myQuestions = [
-  {
-    question: "Wie mag er getapt worden bij de sleepwet?",
-    answers: {
-      a: "De verdachte.",
-      b: "Het gezin waarin de verdacht woont.",
-      c: "De hele wijk waarin de verdacht woont."
-    },
-    correctAnswer: "c"
-  },
-  {
-    question: "Wat mag er getapt/gehacked worden door de AIVD?",
-    answers: {
-      a: "Smart TV's, Computers, Consoles, Smartphones & tablets.",
-      b: "Pacemakers, Koffiezet apparaten & TV's",
-      c: "Apparaten mogen niet gehacked worden door de AIVD"
-    },
-    correctAnswer: "a"
-  },
-  {
-    question: "Welke data mag de AIVD verzamelen?",
-    answers: {
-      a: "Inhoud van gesprekken.",
-      b: "Foto's & Metadata.",
-      c: "Er is geen duidelijk kader in de wet.",
+    {
+      question: "Wie mag er getapt worden bij de sleepwet?",
+      answers: {
+        a: "De verdachte.",
+        b: "Het gezin waarin de verdacht woont.",
+        c: "De hele wijk waarin de verdacht woont."
       },
-    correctAnswer: "c"
-  }
-  {
-    question: "Hoe lang moet deze data bewaard worden?",
-    answers: {
-      a: "6 maanden.",
-      b: "3 jaar.",
-      c: "10 jaar",
+      correctAnswer: "c"
+    },
+    {
+      question: "Wat mag er getapt/gehacked worden door de AIVD?",
+      answers: {
+        a: "Smart TV's, Computers, Consoles, Smartphones & tablets.",
+        b: "Pacemakers, Koffiezet apparaten & TV's",
+        c: "Apparaten mogen niet gehacked worden door de AIVD"
       },
-    correctAnswer: "b"
-  }
-];
+      correctAnswer: "a"
+    },
+    {
+      question: "Welke data mag de AIVD verzamelen?",
+      answers: {
+        a: "Inhoud van gesprekken.",
+        b: "Foto's & Metadata.",
+        c: "Er is geen duidelijk kader in de wet.",
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Hoe lang moet deze data bewaard worden?",
+      answers: {
+        a: "6 maanden.",
+        b: "3 jaar.",
+        c: "10 jaar",
+      },
+      correctAnswer: "b"
+    }
+  ];
   // display quiz right away
   buildQuiz();
 
