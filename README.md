@@ -2,6 +2,10 @@ Hi web designer, we need you to make this tool populair. You can use this freely
 
 **Yes this piece of software is MIT-licensed**
 
+One method is using an i frame like this
+
+<iframe> https://sicarii-13.github.io/watdewiv/watdewiv.html </iframe> 
+
 Help us stop the sleepwet. You can clone or download this software and add this to yourwebsite.
 
 Please add the following code in the body. 
