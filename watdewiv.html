@@ -14,14 +14,18 @@
         <div class="question" rv-text="question.question"></div>
         <div class="answers">
           <label rv-each-answer="question.answers">
-            <input type="radio" rv-data-accepted="answer.accepted" rv-checked="answer.chosen">
+            <input type="checkbox" rv-data-accepted="answer.accepted" rv-checked="answer.chosen">
             <span rv-text="answer.description"></span>
           </label>
         </div>
 
         <button id="previous" rv-enabled="index | > 0" rv-on-click="prev">Vorige vraag</button>
-        <button id="next" rv-enabled="index | smallerThan questions" rv-on-click="next">Volgende vraag</button>
-        <button id="submit">Verstuur</button>
+        <button id="next" rv-enabled="index | beforeLast questions" rv-on-click="next">Volgende vraag</button>
+        <button id="submit" rv-data-enabled="index | atLast questions" rv-on-click="check">Verstuur</button>
+      </div>
+
+      <div class="result" rv-if="result">
+        <span rv-text="result"></span>
       </div>
 
     </div>

@@ -1,7 +1,7 @@
 
 const rivetsData = {
-  prev: function (e, rivetsData) {
-    const self = rivetsData || this;
+  prev: function (e, rvData) {
+    const self = rvData || this;
     const $this = $(e.currentTarget);
     const index = $this.parent().data('question');
 
@@ -14,8 +14,8 @@ const rivetsData = {
     self.questions[index - 1].active = true;
   },
 
-  next: function (e, rivetsData) {
-    const self = rivetsData || this;
+  next: function (e, rvData) {
+    const self = rvData || this;
     const $this = $(e.currentTarget);
     const index = $this.parent().data('question');
 
@@ -28,7 +28,21 @@ const rivetsData = {
     self.questions[index + 1].active = true;
   },
 
+  check: function (e, rvData) {
+    const self = rvData || this;
+
+    let correct = 0;
+    for (let i = 0, n = self.questions.length; i < n; i++) {
+      if (self.questions[i].answers.every((answer) => !!answer.chosen === !!answer.accepted)) {
+        correct++;
+      }
+    }
+
+    rivetsData.result = (correct / self.questions.length * 100) + ' %';
+  },
+
   currentQuestion: 0,
+  result: false,
   questions: [
     {
       active: true,
@@ -71,8 +85,12 @@ window.rivetsData = rivetsData;
 rivets.formatters['=='] = (valueA, valueB) => valueA == valueB;
 rivets.formatters['<'] = (valueA, valueB) => valueA < valueB;
 
-rivets.formatters['smallerThan'] = (valueA, valueB) => {
+rivets.formatters['beforeLast'] = (valueA, valueB) => {
   return valueA < valueB.length - 1;
+};
+
+rivets.formatters['atLast'] = (valueA, valueB) => {
+  return valueA === valueB.length - 1;
 };
 
 $(document).ready(() => {
