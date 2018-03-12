@@ -10,10 +10,7 @@
     <h1>Wat de WIV?</h1>
 
     <div class="quiz-container">
-      <span rv-text="currentQuestion"></span>
       <div class="question" rv-each-question="questions" style="display: none;" rv-data-question="index" rv-show="question.active">
-        <span rv-text="index"></span>
-        <span rv-text="current"></span>
         <div class="question" rv-text="question.question"></div>
         <div class="answers">
           <label rv-each-answer="question.answers">
